@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4.class)
 public class StudentGradeTest {
-    StudentGrades studentGrades;
+    private StudentGrades studentGrades;
 
     @Before
     public void setUp() {

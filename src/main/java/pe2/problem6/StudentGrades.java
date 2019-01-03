@@ -9,32 +9,33 @@ import java.util.stream.Collectors;
 
 public class StudentGrades {
 
-    public float getAverage(List<Integer> gradeList){
-        int sum=gradeList.stream().reduce((a,b)->a+b).get();
-        return sum/gradeList.size();
-    }
-
-    public int getMinimum(List<Integer> gradeList){
-       return gradeList.stream().sorted().collect(Collectors.toList()).get(0);
-    }
-    public int getMaximum(List<Integer> gradeList){
-        return gradeList.stream().sorted().collect(Collectors.toList()).get(gradeList.size()-1);
-    }
-
     public static void main(String[] args) throws IOException {
-        StudentGrades studentGrades=new StudentGrades();
-        BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
-        int numberOfStudents= Integer.parseInt(bufferedReader.readLine());
-        List<Integer> gradeList=new ArrayList<>();
-        int i=0;
+        StudentGrades studentGrades = new StudentGrades();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        int numberOfStudents = Integer.parseInt(bufferedReader.readLine());
+        List<Integer> gradeList = new ArrayList<>();
+        int i = 0;
 
-        while (i<numberOfStudents){
-            System.out.println("Enter grade for student "+i+1);
+        while (i < numberOfStudents) {
+            System.out.println("Enter grade for student " + i + 1);
             gradeList.add(i, Integer.valueOf(bufferedReader.readLine()));
             i++;
         }
-        System.out.println("Average grade is "+studentGrades.getAverage(gradeList));
-        System.out.println("Maximum grade is "+studentGrades.getMaximum(gradeList));
-        System.out.println("Minimum grade is "+studentGrades.getMinimum(gradeList));
+        System.out.println("Average grade is " + studentGrades.getAverage(gradeList));
+        System.out.println("Maximum grade is " + studentGrades.getMaximum(gradeList));
+        System.out.println("Minimum grade is " + studentGrades.getMinimum(gradeList));
+    }
+
+    float getAverage(List<Integer> gradeList) {
+        int sum = gradeList.stream().reduce((a, b) -> a + b).get();
+        return sum / gradeList.size();
+    }
+
+    int getMinimum(List<Integer> gradeList) {
+        return gradeList.stream().sorted().collect(Collectors.toList()).get(0);
+    }
+
+    int getMaximum(List<Integer> gradeList) {
+        return gradeList.stream().sorted().collect(Collectors.toList()).get(gradeList.size() - 1);
     }
 }

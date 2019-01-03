@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnit4.class)
 public class PowerOf4Test {
-    PowerOf4 powerOf4;
+    private PowerOf4 powerOf4;
 
     @Before
     public void setUp() {

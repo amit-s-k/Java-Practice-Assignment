@@ -6,16 +6,17 @@ import java.io.InputStreamReader;
 
 public class EvenOrOdd {
 
-    public boolean isEven(int number){
-        return number%2==0;
-    }
-    public static void main(String [] args) throws IOException {
-        EvenOrOdd number= new EvenOrOdd();
-        BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
-        if(number.isEven(Integer.parseInt(bufferedReader.readLine()))){
+    public static void main(String[] args) throws IOException {
+        EvenOrOdd number = new EvenOrOdd();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        if (number.isEven(Integer.parseInt(bufferedReader.readLine()))) {
             System.out.println("Number is even");
-        }else {
+        } else {
             System.out.println("Number is odd");
         }
+    }
+
+    boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }

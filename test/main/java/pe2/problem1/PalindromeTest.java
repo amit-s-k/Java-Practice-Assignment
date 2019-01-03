@@ -36,4 +36,8 @@ public class PalindromeTest {
     public void testForNonPalindromeNumberInput() {
         assertFalse(palindrome.isPalindrome("122"));
     }
+    @Test
+    public void testForNullInput(){
+        assertFalse(palindrome.isPalindrome(null));
+    }
 }
